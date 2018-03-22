@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "briantoliveira",
+    "password": null,
+    "database": "rxcontrol",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "briantoliveira",
+    "password": null,
+    "database": "rxcontrol",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "rxcontrol",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

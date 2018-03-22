@@ -15,6 +15,8 @@
     "express-handlebars": "^3.0.0",
     "jsonwebtoken": "^8.2.0",
     "path": "^0.12.7",
+    "pg": "^7.4.1",
+    "pg-hstore": "^2.3.2",
     "sequelize": "^4.37.3"
   }
 }
