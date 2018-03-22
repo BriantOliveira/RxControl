@@ -1,5 +1,5 @@
 /*****************************************************
-*                  RX CONTROL
+*                   RX CONTROL
 *                  MAIN SERVER
 ******************************************************/
 
@@ -72,7 +72,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(verifyAuthentication)
 
 //Handlebars view engine
-app.engine('hbs', hbs({ defaultLayout: 'main', extname: 'hbs'}));
+app.engine('hbs', hbs({ defaultLayout: 'main', extname: 'hbs' }));
 app.set('view engine', 'hbs')
 
 //Load Routes
