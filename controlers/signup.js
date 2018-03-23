@@ -68,10 +68,10 @@ module.exports = function (app) {
 
   // DESTROY
   app.delete('/provider/:id', (req, res) => {
-    const userId = req.body.params;
-    db.Provider.destroy(providerId).then((user) => {
+    const providerId = req.body.params;
+    db.Provider.destroy(providerId).then((provider) => {
       res.status(200);
-      res.json({msg: 'successfully deleted', user});
+      res.json({msg: 'successfully deleted', provider});
     }).catch((err) => {
       if (err) {
         res.json(err);
