@@ -18,7 +18,7 @@ module.exports = function (app) {
     // Provider Signup Routes
 
      // Create
-     app.post('/signup', (req, res) => {
+     app.post('/signup/provider', (req, res) => {
         // hash the password
         bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(req.body.password, salt, (err, hash) => {
@@ -78,4 +78,6 @@ module.exports = function (app) {
       }
     });
   });
+
+
 };
