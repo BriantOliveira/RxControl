@@ -44,14 +44,6 @@ module.exports = function (app) {
         });
     });
 
-    // SHOW
-  app.get('/provider/:id', (req, res) => {
-    const providerId = req.params.id;
-    db.Provider.findById(providerId, { include: [db.Item] }).then((provider) => {
-      res.json(provider);
-    });
-  });
-
     // UPDATE
   app.put('/provider/:id/edit', (req, res) => {
     const providerId = req.body.params;

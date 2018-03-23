@@ -15,24 +15,25 @@ module.exports = function (app) {
          res.send('Signup');
      });
 
-    // Provider Signup Routes
+    /*****************************************
+    * Pharmacy Signup Routes
+    *****************************************/
 
      // Create
-     app.post('/signup/provider', (req, res) => {
+     app.post('/signup/pharmacy', (req, res) => {
         // hash the password
         bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(req.body.password, salt, (err, hash) => {
             console.log("hash " + hash);
             var newPharmacy = {
                 first: req.body.first,
-                last: req.body.last,
                 email: req.body.email,
                 password: hash
             };
-            models.Provider.create(newProvider, {w:1}).then((savedProvider)=>{
+            models.Pharmacy.create(newPharmacy, {w:1}).then((savedProvider)=>{
                 //console.log(savedPharmacy.dataValues.id)
-                console.log("saved", savedProvider.first)
-                auth.setPharmacyIDCookie(savedProvider, res);
+                console.log("saved", savedPharmacy.first)
+                auth.setPharmacyIDCookie(savedPharmacy, res);
                 return res.status(200).send({ message: 'Created Pharmacy' });
 
             }).catch((err)=>{
@@ -45,19 +46,19 @@ module.exports = function (app) {
     });
 
     // SHOW
-  app.get('/provider/:id', (req, res) => {
-    const providerId = req.params.id;
-    db.Provider.findById(providerId, { include: [db.Item] }).then((provider) => {
-      res.json(provider);
+  app.get('/pharmacy/:id', (req, res) => {
+    const pharmacyId = req.params.id;
+    db.Pharmacy.findById(pharmacyId, { include: [db.Patient] }).then((pharmacy) => {
+      res.json(pharmacy);
     });
   });
 
     // UPDATE
-  app.put('/provider/:id/edit', (req, res) => {
+  app.put('/pharmacy/:id/edit', (req, res) => {
     const PharmacyId = req.body.params;
-    db.Provider.update(providerId).then((provider) => {
+    db.Pharmacy.update(pharmacyId).then((pharmacy) => {
       res.json(200);
-      res.json({msg: 'successfully updated', provider});
+      res.json({msg: 'successfully updated', pharmacy});
     }).catch((err) => {
       if(err) {
         res.json(err)
@@ -67,11 +68,11 @@ module.exports = function (app) {
 
 
   // DESTROY
-  app.delete('/provider/:id', (req, res) => {
-    const providerId = req.body.params;
-    db.Provider.destroy(providerId).then((provider) => {
+  app.delete('/pharmacy/:id', (req, res) => {
+    const pharmacyId = req.body.params;
+    db.Pharmacy.destroy(pharmacyId).then((pharmacy) => {
       res.status(200);
-      res.json({msg: 'successfully deleted', provider});
+      res.json({msg: 'successfully deleted', pharmacy});
     }).catch((err) => {
       if (err) {
         res.json(err);
