@@ -76,15 +76,12 @@ app.engine('hbs', hbs({ defaultLayout: 'main', extname: 'hbs' }));
 app.set('view engine', 'hbs')
 
 //Load Routes
-require('pharmacy-signup')(app);
-require('provider-signup')(app);
+require('./controlers/pharmacy-signup.js')(app);
+require('./controlers/provider-signup.js')(app);
 
 // Add 404 Page
 
-
-
 //Listen PORT number
-
 app.listen(PORT, function() {
     console.log('RxControl listening on port', PORT);
 });

@@ -3,7 +3,7 @@
 *               Sign up Route
 **********************************************/
 
-const models = require('../models');
+const models = require('../db/models');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('../auth.js');
 
