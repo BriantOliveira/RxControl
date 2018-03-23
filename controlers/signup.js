@@ -15,6 +15,8 @@ module.exports = function (app) {
          res.send('Signup');
      });
 
+    // Provider Signup Routes
+
      // Create
      app.post('/signup', (req, res) => {
         // hash the password
