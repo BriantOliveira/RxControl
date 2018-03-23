@@ -76,9 +76,11 @@ app.engine('hbs', hbs({ defaultLayout: 'main', extname: 'hbs' }));
 app.set('view engine', 'hbs')
 
 //Load Routes
-
+require('pharmacy-signup')(app);
+require('provider-signup')(app);
 
 // Add 404 Page
+
 
 
 //Listen PORT number
