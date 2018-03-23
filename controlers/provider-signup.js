@@ -23,7 +23,7 @@ module.exports = function (app) {
         bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(req.body.password, salt, (err, hash) => {
             console.log("hash " + hash);
-            var newUser = {
+            var newProvider = {
                 first: req.body.first,
                 last: req.body.last,
                 email: req.body.email,
@@ -32,7 +32,7 @@ module.exports = function (app) {
             models.Provider.create(newProvider, {w:1}).then((savedProvider)=>{
                 //console.log(savedUser.dataValues.id)
                 console.log("saved", savedProvider.first)
-                auth.setUserIDCookie(savedProvider, res);
+                auth.setProviderIDCookie(savedProvider, res);
                 return res.status(200).send({ message: 'Created user' });
 
             }).catch((err)=>{
@@ -54,7 +54,7 @@ module.exports = function (app) {
 
     // UPDATE
   app.put('/provider/:id/edit', (req, res) => {
-    const userId = req.body.params;
+    const providerId = req.body.params;
     db.Provider.update(providerId).then((provider) => {
       res.json(200);
       res.json({msg: 'successfully updated', provider});
