@@ -8,7 +8,7 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('../auth.js');
 
 modules.exports = function(app) {
-
+    // Stored the token on the env file
     var token = process.env.TOKEN
     var query = req.query
 
