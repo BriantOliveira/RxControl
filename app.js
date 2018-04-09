@@ -2,13 +2,14 @@
 *                   RX CONTROL
 *                  MAIN SERVER
 ******************************************************/
-
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
 const hbs = require('express-handlebars');
 const jwt = require('jsonwebtoken');
 const path = require('path');
+const fetch = require('node-fetch');
 
 
 //Initiate express
@@ -78,6 +79,33 @@ app.set('view engine', 'hbs')
 //Load Routes
 require('./controlers/pharmacy-signup.js')(app);
 require('./controlers/provider-signup.js')(app);
+
+app.get('/test', (req, res) => {
+    // show form
+    // render form
+    res.send('This is the validation form')
+});
+
+app.post('/test', (req, res) => {
+    // send form
+    // collect form data
+    // send form data ...
+    const https = require("https");
+    const lastname = "Goshen";
+    const query = '1861582694';
+    const token = process.env.TOKEN;
+    const url =
+      `http://www.HIPAASpace.com/api/npi/validate?q=${query}&qf=LastName:true:${lastname}&rt=json&token=${token}`;
+      console.log(url);
+    fetch(url).then((res) => {
+        return res.json();
+    }).then((json) => {
+        res.send(json);
+        console.log(json);
+    }).catch((err) => {
+        console.log(err.message);
+    })
+})
 
 // Add 404 Page
 
