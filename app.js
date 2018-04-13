@@ -107,6 +107,10 @@ app.post('/test', (req, res) => {
     })
 })
 
+
+//Load Routes
+require('./controlers/index.js')(app);
+
 // Add 404 Page
 
 //Listen PORT number
