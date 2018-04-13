@@ -5,14 +5,14 @@
 
 const models = require('../db/models');
 const jwt = require('jsonwebtoken');
-const bcrypt = require('../auth.js');
+const bcrypt = require('bcrypt-nodejs');
 
 
 module.exports = function (app) {
     //Index
-    app.get('/signup', function (req, res) {
+    app.get('/pharmsignup', function (req, res) {
          // res.render('signup', {});
-         res.send('Signup');
+         res.render('pharmsignup');
      });
 
     /*****************************************
@@ -23,7 +23,7 @@ module.exports = function (app) {
      app.post('/signup/pharmacy', (req, res) => {
         // hash the password
         bcrypt.genSalt(10, (err, salt) => {
-        bcrypt.hash(req.body.password, salt, (err, hash) => {
+        bcrypt.hash(req.body.password, salt,null, (err, hash) => {
             console.log("hash " + hash);
             var newPharmacy = {
                 first: req.body.first,

@@ -1,10 +1,12 @@
 /****************************************************
      *  LOGIN ROUTES
      ***************************************************/
-    app.get('/login', function(req, res) {
-         res.render('login');
-     });
 
+module.exports = function (app) {
+
+   app.get('/login', (req, res)=> {
+        res.render('login');
+    });
     // Compares if password given is correct in the database
     app.post('/login', (req, res) => {
         console.log("email", req.body.email)
