@@ -1,0 +1,170 @@
+<style media="screen">
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    min-height: 100%;
+    background-image: url(../../public/assets/images/pill.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  img {
+    width: 100%;
+    max-width: 100% !important;
+    max-height: 100% !important;
+  }
+
+  .index-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: .7fr 5fr 2fr 1.5fr;
+    grid-template-areas: 'nav'
+                         'body'
+                         'auth-btns'
+                         'footer';
+  }
+
+  .index-nav-bar {
+    grid-area: nav;
+    background-color: #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 30px;
+  }
+
+  .logo  {
+    width: 50px;
+    height: 50px;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .dev-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .space-between-info {
+    width: 20px;
+  }
+
+  .index-body-1 {
+    grid-area: 'body';
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(75, 75, 93, 0.35), rgba(75, 75, 93, 0.35));
+  }
+
+  .buttons {
+    grid-area: 'body';
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to bottom, rgba(75, 75, 93, 0.35), rgba(75, 75, 93, 0.35));
+  }
+
+  .button {
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    box-shadow: inset 0 0 0 3px #6cc091;
+    color: #222 !important;
+    border-radius: 30px;
+    border: 0;
+    cursor: pointer;
+    display: inline-block;
+    font-size: .75em;
+    font-weight: 400;
+    height: 3.75em;
+    line-height: 3.85em;
+    letter-spacing: 2px;
+    padding: 0 4em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 250px;
+    background: linear-gradient(to bottom, rgba(75, 75, 93, 0.1), rgba(75, 75, 93, 0.1));
+  }
+
+  .login-button {
+    font-weight: bolder !important;
+  }
+
+  .footer {
+    grid-area: 'footer';
+    background-color: #222;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+    background: linear-gradient(to bottom, rgba(75, 75, 93, 0.35), rgba(75, 75, 93, 0.35));
+  }
+
+  .copyright {
+    font-size: 20px;
+    color: #6cc091 !important;
+  }
+
+</style>
+
+
+<div class="index-wrapper">
+
+  <div class="index-nav-bar">
+    <div class="logo">
+      <a href="/" >
+        <img src="../../public/assets/images/logo3.png" alt="Logo">
+      </a>
+    </div>
+
+
+    <div class="dev-info">
+      <a href="/" style="font-weight: bold; text-decoration: none;">About Us</a>
+      <div class="space-between-info"></div>
+      <a href="/" style="font-weight: bold; text-decoration: none;">Contact</a>
+    </div>
+  </div>
+
+  <div class="index-body-1">
+    <h1>Welcome to RxControl</h1>
+    <h2>Our Mission</h2>
+    <p>Statement</p>
+  </div>
+
+  <div class="buttons">
+    <div class="login-button">
+      <a href="/pharmacist" class="button">Log In</a>
+    </div>
+
+    <div class="register-button">
+      <a href="/" class="button">Register</a>
+    </div>
+  </div>
+
+
+  <div class="footer">
+    <footer>
+      <div class="copyright">
+        &copy; RxControl
+      </div>
+    </footer>
+  </div>
+
+</div>
