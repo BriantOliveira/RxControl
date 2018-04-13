@@ -110,6 +110,7 @@ app.post('/test', (req, res) => {
 
 //Load Routes
 require('./controlers/index.js')(app);
+require('./controlers/pharmacy-dashboard.js')(app);
 
 // Add 404 Page
 
