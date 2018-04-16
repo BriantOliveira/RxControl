@@ -63,6 +63,7 @@ img {
 
 .index-body-1 {
   grid-area: 'body';
+  padding-top: 400px;
   border-top: 2px solid rgba(255, 255, 255, 0.4);
   display: flex;
   flex-direction: column;
