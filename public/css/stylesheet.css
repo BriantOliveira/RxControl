@@ -275,3 +275,7 @@ h5 {
 :-ms-input-placeholder {
    text-align: center;
 }
+
+.navbar-absolute {
+    background-color: #494C4E;
+}
