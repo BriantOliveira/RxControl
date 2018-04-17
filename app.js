@@ -10,6 +10,7 @@ const hbs = require('express-handlebars');
 const jwt = require('jsonwebtoken');
 const path = require('path');
 const fetch = require('node-fetch');
+const mailgun = require('mailgun-js')
 
 
 //Initiate express
@@ -113,6 +114,61 @@ require('./controlers/index.js')(app);
 require('./controlers/pharmacy-dashboard.js')(app);
 
 // Add 404 Page
+
+
+//MAIL GUN
+function post(path, params, method) {
+    method = method || "post"; // Set method to post by default if not specified.
+
+    // The rest of this code assumes you are not using a library.
+    // It can be made less wordy if you use one.
+    var form = document.createElement("form");
+    form.setAttribute("method", method);
+    form.setAttribute("action", path);
+
+    for(var key in params) {
+        if(params.hasOwnProperty(key)) {
+            var hiddenField = document.createElement("input");
+            hiddenField.setAttribute("type", "hidden");
+            hiddenField.setAttribute("name", key);
+            hiddenField.setAttribute("value", params[key]);
+
+            form.appendChild(hiddenField);
+        }
+    }
+
+    document.body.appendChild(form);
+    form.submit();
+}
+
+app.post('/', (req, res) => {
+    let data;
+    let api_key = 'key-b2e232b515e23a91805b4ca0ae9c098a';
+    let domain = 'sandbox327e859bafc442479e7384439df8c22c.mailgun.org';
+    let mailgun = require('mailgun-js')({apiKey: api_key, domain: domain});
+
+
+    data = {
+        from: 'RxControl Team <postmaster@sandbox327e859bafc442479e7384439df8c22c.mailgun.org>',
+        to: 'briantmoliveira@gmail.com',
+        subject: 'Contact us',
+        text: 'From: ' + req.body.name + '(' + req.body.email + ')\n' + req.body.body
+    };
+
+    mailgun.messages().send(data, function (err, body) {
+        if (err) {
+            // res.render('index', {error: err});
+            console.log("got an error: ", err);
+        }
+    });
+});
+
+
+//Listen on port number
+app.listen(PORT, function() {
+    console.log('Hamster Wheel listening on port ', PORT);
+});
+
 
 //Listen PORT number
 app.listen(PORT, function() {
