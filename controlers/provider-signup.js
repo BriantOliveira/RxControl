@@ -11,8 +11,7 @@ const bcrypt = require('../auth.js');
 module.exports = function (app) {
     //Index
     app.get('/signup', function (req, res) {
-         // res.render('signup', {});
-         res.send('Signup');
+         res.render('reg-selection');
      });
 
     // Provider Signup Routes
