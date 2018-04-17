@@ -164,12 +164,6 @@ app.post('/', (req, res) => {
 });
 
 
-//Listen on port number
-app.listen(PORT, function() {
-    console.log('Hamster Wheel listening on port ', PORT);
-});
-
-
 //Listen PORT number
 app.listen(PORT, function() {
     console.log('RxControl listening on port', PORT);
