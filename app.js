@@ -2,7 +2,7 @@
 *                   RX CONTROL
 *                  MAIN SERVER
 ******************************************************/
-
+require('dotenv').config();
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const express = require('express');
@@ -21,17 +21,18 @@ const PORT = process.env.PORT || 3000
 * SQL Database Connection
 *******************************************/
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('rxcontrol', 'postgres', 'password', { dialect: 'postgres', logging: false });
+const sequelize = new Sequelize('rxcontrol', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err.message);
-  });
+var models = require("./db/models");
+models.sequelize.sync().then(function() {
 
+    console.log('Nice! Database looks fine')
+
+}).catch(function(err) {
+
+    console.log(err, "Something went wrong with the Database Update!")
+
+});
   /****************************************************
   *  Check for login token on every request
   ***************************************************/
@@ -78,11 +79,7 @@ app.set('view engine', 'hbs')
 //Load Routes
 require('./controlers/pharmacy-signup.js')(app);
 require('./controlers/provider-signup.js')(app);
-require('./controlers/login.js')(app);
-// Routes for testing 2FA currently set to the home route
-app.get('/', (req,res) =>{
-  res.render('login');
-})
+require('./controlers/index.js')(app);
 
 // Add 404 Page
 

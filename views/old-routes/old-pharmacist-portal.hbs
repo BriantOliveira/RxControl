@@ -1,0 +1,144 @@
+<style media="screen">
+
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  body, html {
+    height: 100%;
+    min-height: 100%;
+    background-image: url(../../public/assets/images/pill.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  .logged-wrapper {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: .5fr 6fr;
+    grid-template-rows: 50px 300px;
+    grid-template-areas: 'nav header'
+                         'nav body'
+                         'nav body'
+                         'nav body'
+
+  }
+
+  .log-in-nav {
+    padding: 20px;
+    grid-area: nav;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 3px #ddd;
+  }
+
+  .header-container {
+    grid-area: header;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+
+  .body-container {
+    grid-area: body;
+    background-color: #f4f4f4;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 'search-area';
+  }
+
+  .search-patient {
+      grid-area: search-area;
+      margin: auto;
+      margin-top: 4em;
+      margin-bottom: 0;
+      background-color: #ffffff;
+      top: 30px;
+      bottom: 0;
+      width: 85%;
+      display: flex;
+      justify-content: space-around;
+      flex-direction: column;
+      align-items: center;
+      border-radius: 7.5px 7.5px 0 0;
+      box-shadow: inset 0 1px 3px #ddd;
+  }
+
+
+  #search-submit {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #6cc091;
+  }
+
+  input:focus {
+      border: none;
+  }
+
+  input + span {
+      display: block;
+      border-bottom: solid 3px #019fb6;
+      width: 0;
+      -webkit-transition: width 250ms ease-in-out;
+      transition: width 250ms ease-in-out;
+  }
+
+  input:focus + span {
+      width: 101%;          /*  used calc first, but won't work on Edge  */
+      -webkit-transition: width 250ms ease-in-out;
+      transition: width 250ms ease-in-out;
+    }
+
+
+</style>
+
+
+<div class="logged-wrapper">
+
+  <div class="log-in-nav">
+    <h1>Logo</h1>
+    <h1>Name</h1>
+    <h1>Profile</h1>
+    <h1>Setting</h>
+    <h1>Logout</h1>
+  </div>
+
+  <div class="header-container">
+    <h1>RxControl.io</h1>
+    <h1>Home</h1>
+  </div>
+
+
+  <div class="body-container">
+
+    <div class="search-patient">
+        <h1>Search for Client by Entering Their Name and DOB</h1>
+      <form class="patient-search-input" action="/">
+          <div class="input-field">
+              <div class="nameField" style="">
+                <input id="firstname-field" placeholder="Client First Name" type="search" name="client-firstname">
+                <input id="lastname-field" placeholder="Client Last Name" type="search" name="client-lastname">
+              </div>
+              <span></span>
+              <input id="date-field" placeholder="Date of Birth" type="date" name="search-date">
+              <span></span>
+          </div>
+          <button id="search-submit" type="submit">Search</button>
+      </form>
+    </div>
+
+  </div>
+
+</div>
