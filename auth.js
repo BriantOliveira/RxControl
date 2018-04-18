@@ -13,7 +13,18 @@ exports.cookieOptions = function(){
     return jsonObject
 }
 
-exports.setUserIDCookie = function(dbObject, resObject){
+exports.setProviderIDCookie = function(dbObject, resObject){
+    token = jwt.sign({ id: dbObject.dataValues.id }, process.env.SECRETKEY);
+    cookieOptions = {
+        maxAge: 172800000,
+        httpOnly: true
+    };
+    resObject.cookie('jwtToken', token, cookieOptions);
+}
+
+
+
+exports.setPharmacyIDCookie = function(dbObject, resObject){
     token = jwt.sign({ id: dbObject.dataValues.id }, process.env.SECRETKEY);
     cookieOptions = {
         maxAge: 172800000,

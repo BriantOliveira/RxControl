@@ -25,15 +25,16 @@ const PORT = process.env.PORT || 4000
 const Sequelize = require('sequelize');
 const sequelize = new Sequelize('rxcontrol', process.env.DBUSER, null, { dialect: 'postgres', logging: false });
 
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch(err => {
-    console.error('Unable to connect to the database:', err.message);
-  });
+var models = require("./db/models");
+models.sequelize.sync().then(function() {
 
+    console.log('Database is validated and everything seems fine!')
+
+}).catch(function(err) {
+
+    console.log(err, "Something went wrong with the Database Update!")
+
+});
   /****************************************************
   *  Check for login token on every request
   ***************************************************/
@@ -112,6 +113,7 @@ app.post('/test', (req, res) => {
 //Load Routes
 require('./controlers/index.js')(app);
 require('./controlers/pharmacy-dashboard.js')(app);
+require('./controlers/registration-selection.js')(app);
 
 // Add 404 Page
 
