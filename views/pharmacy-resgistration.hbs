@@ -1,0 +1,136 @@
+
+<!-- Navbar-->
+  <nav class="navbar navbar-toggleable-md navbar-default navbar-absolute">
+      <div class="container">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-bar"></span>
+              <span class="navbar-toggler-bar"></span>
+              <span class="navbar-toggler-bar"></span>
+          </button>
+          <a class="navbar-brand mb-0" href="/" style="color: #6cc091;">Rx Control</a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <!-- <a href="#about" class="btn btn-link btn-neutral" style="color: #6cc091;">About Us</a> -->
+                  <!-- <a href="#contact" class="btn btn-link btn-neutral" style="color: #6cc091;">Contact</a> -->
+                  <a href="/login" class="btn btn-link btn-neutral" style="color: #6cc091;">Login</a>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
+
+  <!-- <div class="contactus-1 section-image" style="background-image: url('assets/img/sections/soroush-karimi.jpg')">
+      <div class="container">
+          <div class="row">
+              <div class="col-md-10 offset-md-1">
+                  <div class="card card-contact no-transition">
+                      <h3 class="card-title text-center">Register as Pharmacist Account</h3>
+                      <div class="row">
+                          <div class="col-md-5 offset-md-1">
+                              <div class="card-block">
+                                  <div class="info info-horizontal">
+                                      <div class="icon icon-info">
+                                          <i class="nc-icon nc-pin-3" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="description">
+                                          <h4 class="info-title">Find us at the office</h4>
+                                          <p> Bld Mihail Kogalniceanu, nr. 8,<br>
+                                              7652 Bucharest,<br>
+                                              Romania
+                                          </p>
+                                      </div>
+                                  </div>
+                                  <div class="info info-horizontal">
+                                      <div class="icon icon-danger">
+                                          <i class="nc-icon nc-badge" aria-hidden="true"></i>
+                                      </div>
+                                      <div class="description">
+                                          <h4 class="info-title">Give us a ring</h4>
+                                          <p> Michael Jordan<br>
+                                              +40 762 321 762<br>
+                                              Mon - Fri, 8:00-22:00
+                                          </p>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                          <div class="col-md-5">
+                              <form role="form" id="contact-form" method="post">
+                                  <div class="card-block">
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="form-group label-floating">
+                                                  <label class="control-label">First name</label>
+                                                  <input type="text" name="name" class="form-control" placeholder="First Name">
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <div class="form-group label-floating">
+                                                  <label class="control-label">Last name</label>
+                                                  <input type="text" name="name" class="form-control" placeholder="Last Name">
+                                              </div>
+                                          </div>
+                                      </div>
+                                      <div class="form-group label-floating">
+                                          <label class="control-label">Email address</label>
+                                          <input type="email" name="email" class="form-control" placeholder="Email"/>
+                                      </div>
+                                      <div class="form-group label-floating">
+                                          <label class="control-label">Your message</label>
+                                          <textarea name="message" class="form-control" id="message" rows="6" placeholder="Message"></textarea>
+                                      </div>
+
+                                      <div class="row">
+                                          <div class="col-md-6">
+                                              <div class="checkbox">
+                                                  <input id="checkbox1" type="checkbox">
+                                                  <label for="checkbox1">
+                                                      I'm not a robot !
+                                                  </label>
+                                              </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                              <button type="submit" class="btn btn-primary pull-right">Send Message</a>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </form>
+                              </div>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+  </div> -->
+
+</form>
+<div class="form-style-8">
+  <h2>Register as Pharmacist Account</h2>
+  <form method="POST" action="/signup/pharmacy">
+    <input type="text" name="firstname" placeholder="First Name" />
+    <input type="text" name="lastname" placeholder="Last Name">
+    <input type="password" name="password" placeholder="Password" />
+    <input type="email" name="email" placeholder="Email" />
+    <input type="text" name="address" placeholder="Pharmacy Adress" />
+    <input type="tel" name="phoneNumber" placeholder="Phone Number (123)-456-7890" />
+    <div class="verified-phar">
+        <input name="NPI" placeholder="NPI Number" type="text" />
+        <input name="DEA" placeholder="DEA Number" type="text" />
+        <input name="HIN" placeholder="HIN Number" type="text" />
+    </div>
+    <input type="number" name="licenseNumber" placeholder="License Number" />
+    <span id="btns-phar-form">
+        <button type="submit" onclick="location.href='/pharmacist';" id="phar-submit-btn" style="border-color: #6cc091; color: #6cc091; margin-right: 10px;"> Register </button>
+        <a class="cancelBtn" href="/" role="button" style="color: red;text-decoration: none; padding: 12px; border: 1px solid red; border-radius: 5px;">Cancel</a>
+    </span>
+  </form>
+</div>
+
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+    h.style.height = "20px";
+    h.style.height = (h.scrollHeight)+"px";
+}
+</script>

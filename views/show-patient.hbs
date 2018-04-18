@@ -105,6 +105,26 @@
 
 </style>
 
+<!-- Navbar-->
+  <nav class="navbar navbar-toggleable-md navbar-default navbar-absolute">
+      <div class="container">
+          <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-bar"></span>
+              <span class="navbar-toggler-bar"></span>
+              <span class="navbar-toggler-bar"></span>
+          </button>
+          <a class="navbar-brand mb-0" href="/" style="color: #6cc091;">Rx Control</a>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ml-auto">
+                  <!-- <a href="#about" class="btn btn-link btn-neutral" style="color: #6cc091;">About Us</a> -->
+                  <!-- <a href="#contact" class="btn btn-link btn-neutral" style="color: #6cc091;">Contact</a> -->
+                  <a href="/" class="btn btn-link btn-neutral" style="color: #6cc091;">Return</a>
+              </ul>
+          </div>
+      </div>
+  </nav>
+
 
 <div class="container">
 
@@ -134,11 +154,11 @@
 
   </div>
 
-  <div class="patient-basic-info">
+  <div class="patient-basic-info" style="margin-top: 164px;">
     <h2>{{firstname}} {{lastname}}</h2>
     <div class="dobAndMedication" style="display: flex; flex-direction: row; align-items: center;">
       <h3>DOB: {{birthday}}</h3>
-      <button type="button" id="medicationBtn">See All Prescription</button>
+      <button type="button" id="medicationBtn">See All</button>
     </div>
 
   </div>

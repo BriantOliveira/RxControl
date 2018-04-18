@@ -32,7 +32,7 @@ module.exports = (app) => {
     });
 
     app.get('/show-patient', function(req, res) {
-        res.render('show-patient', {firstname: 'John', lastname: 'Doe', birthday: '01/20/1996', quantity: 5, medication: 'Something', dosage: 5, date: '02/33/2112' });
+        res.render('show-patient', {firstname: 'John', lastname: 'Doe', birthday: '01/20/1996', quantity: 'BID 60 pills', medication: 'Pecocet', dosage: '235mg', date: '02/21/2018' });
     });
 
     app.get('/login', function(req, res) {
@@ -43,5 +43,8 @@ module.exports = (app) => {
     //     res.render('modal-view');
     // });
 
+    app.get('/profile', function(req, res) {
+        res.render('profile')
+    })
 
 }

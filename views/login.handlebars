@@ -72,10 +72,10 @@
 
 <div class="login-page">
   <div class="form">
-    <form class="login-form"  action="/pharmacist">
+    <form class="login-form" method="POST" action="login">
       <input type="text" name="email" placeholder="Email"/>
       <input type="password" name="password" placeholder="Password"/>
-      <button onclick="location.href = '/pharmacist';" type="submit">login</button><a id="backBtn" href="/">Back</a>
+      <button type="submit">login</button> <a id="backBtn" href="/">Back</a>
       <p class="message">Not registered? <a href="/reg-selection">Register an account</a></p>
     </form>
   </div>
