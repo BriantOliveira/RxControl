@@ -15,7 +15,7 @@ const path = require('path');
 const app = express()
 
 // Setting up a PORT number
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT || 4000
 
 /*******************************************
 * SQL Database Connection
@@ -80,6 +80,7 @@ app.set('view engine', 'hbs')
 require('./controlers/pharmacy-signup.js')(app);
 require('./controlers/provider-signup.js')(app);
 require('./controlers/index.js')(app);
+require('./controlers/research.js')(app);
 
 // Add 404 Page
 

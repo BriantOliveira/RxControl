@@ -3,7 +3,7 @@ auth = require('./auth.js')
      *  LOGIN ROUTES
      ***************************************************/
     app.get('/login', function(req, res) {
-         res.render('login');
+         res.render('login-form');
      });
 
     // Compares if password given is correct in the database

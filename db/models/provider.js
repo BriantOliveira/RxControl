@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
     DEA: DataTypes.STRING,
     licenseNumber: DataTypes.STRING,
     HIN: DataTypes.STRING,
+    phone: DataTypes.STRING,
     password: DataTypes.STRING
   }, {});
   Provider.associate = function(models) {
