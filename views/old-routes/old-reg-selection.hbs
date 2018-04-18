@@ -1,0 +1,141 @@
+<style media="screen">
+
+    .reg-selection-wrapper {
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 7fr;
+        grid-template-areas: 'nav'
+                             'body'
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      margin: 0 !important;
+      padding: 0 !important;
+      max-width: 50px;
+      max-height: 50px;
+    }
+
+    .header-nav {
+        grid-area: nav;
+        background-color: #222;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding-left: 40px;
+        padding-right: 40px;
+        color: white;
+        align-items: center;
+    }
+
+    .register-view {
+        grid-area: body;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background-color: #f4f4f4;
+        grid-gap: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .reg-as-pharmacist {
+        width: 40%;
+        height: 80%;
+        background-color: #4D4D4D;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 2px solid #6cc091;
+        color: #fff;
+
+    }
+
+    .reg-as-pharmacist:hover {
+        background: linear-gradient(to bottom, rgba(108, 192, 145, 0.35), rgba(75, 75, 93, 0.35));
+        cursor: pointer;
+        color: #222;
+    }
+
+    .reg-as-doctor {
+        width: 40%;
+        height: 80%;
+        background-color: #4D4D4D;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        border: 2px solid #6cc091;
+        color: #fff;
+    }
+
+    .reg-as-doctor:hover {
+        background: linear-gradient(to bottom, rgba(108, 192, 145, 0.35), rgba(75, 75, 93, 0.35));
+        cursor: pointer;
+        color: #222;
+    }
+
+    .button {
+      transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+      background-color: transparent;
+      box-shadow: inset 0 0 0 3px #6cc091;
+      color: #222;
+      border-radius: 30px;
+      border: 0;
+      cursor: pointer;
+      display: inline-block;
+      font-size: .75em;
+      font-weight: 400;
+      height: 3.75em;
+      line-height: 3.85em;
+      letter-spacing: 2px;
+      padding: 0 4em;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+      width: 250px;
+      background-color: white;
+    }
+
+    .button:hover {
+        background-color: #222;
+        color: white;
+    }
+
+</style>
+
+
+<div class="reg-selection-wrapper">
+
+    <div class="header-nav">
+        <h1>Logo</h1>
+        <h1>Home</h1>
+    </div>
+
+    <div class="register-view">
+
+        <div class="reg-as-pharmacist">
+            <h1>Register as Pharmacist</h1>
+            <p>Register as a pharmacist allows you to add and view patients infomation</p>
+            <div class="register-phar-btn">
+              <a href="/new-pharmacist" class="button">Register Now</a>
+            </div>
+        </div>
+
+        <div class="reg-as-doctor">
+            <h1>Register as Doctor</h1>
+            <p>Register as a doctor allows you to view patients infomation</p>
+            <div class="register-doc-btn">
+              <a href="/new-doctor" class="button">Register Now</a>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,14 +1,14 @@
 {
   "development": {
-    "username": "briantoliveira",
-    "password": null,
+    "username": "postgres",
+    "password": "password",
     "database": "rxcontrol",
     "host": "127.0.0.1",
     "dialect": "postgres"
   },
   "test": {
-    "username": "briantoliveira",
-    "password": null,
+    "username": "postgres",
+    "password": "password",
     "database": "rxcontrol",
     "host": "127.0.0.1",
     "dialect": "postgres"

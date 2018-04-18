@@ -1,0 +1,79 @@
+<style media="screen">
+    input:focus {
+        border: none;
+    }
+
+    input + span {
+        display: block;
+        border-bottom: solid 3px #019fb6;
+        width: 0;
+        -webkit-transition: width 250ms ease-in-out;
+        transition: width 250ms ease-in-out;
+    }
+
+    input:focus + span {
+        width: 101%;          /*  used calc first, but won't work on Edge  */
+        -webkit-transition: width 250ms ease-in-out;
+        transition: width 250ms ease-in-out;
+      }
+</style>
+
+<div class="logged-wrapper">
+
+  <div class="log-in-nav">
+    <!-- <h1>Logo</h1> -->
+    <div class="icon icon-danger" style="color: #000; font-size: 40px; text-align: center; padding-bottom: 30px;">
+        <i class="nc-icon nc-single-02"></i>
+        <h5><b>Profile</b></h5>
+    </div>
+    <div class="icon icon-danger" style="color: #000; font-size: 40px; text-align: center; padding-bottom: 30px;">
+        <i class="nc-icon nc-settings-gear-65"></i>
+        <h5><b>Settings</b></h5>
+    </div>
+    <div class="icon icon-danger" style="color: #000; font-size: 40px; text-align: center; padding-bottom: 30px;">
+        <i class="nc-icon nc-button-power"></i>
+        <h5><b>Logout</b></h5>
+    </div>
+  </div>
+
+  <div class="header-container">
+      <div class="icon icon-danger" style="color: #000; font-size: 32px; padding-left: 1113px; padding-top: 19px;">
+          <a href="/" style="color: #000;"><i class="nc-icon nc-layout-11"></i></a>
+      </div>
+  </div>
+
+
+  <div class="body-container">
+      <div class="icon icon-danger" style="color: #000; font-size: 32px; padding-left: 1113px; padding-top: 19px;">
+          <i class="nc-icon nc-ambulance"></i>
+      </div>
+    <div class="search-patient">
+      <form class="patient-search-input" action="/">
+          <div class="input-field">
+              <!-- <input id="name-field" placeholder="Enter Name" type="text" name="client-name" value="{{client-name}}"> -->
+              <div class="nameField" style="display: flex; flex-direction: row;">
+                <input id="firstname-field" placeholder="Client First Name" type="search" name="client-firstname" value="{{client-firstname}}">
+                <input id="lastname-field" placeholder="Client Last Name" type="search" name="client-lastname" value="{{client-lastname}}">
+              </div>
+              <span></span>
+              <input required="" type="text" class="form-control" placeholder="Date of Birth" onfocus="(this.type='date')" style="text-align: center;" name="search-date" value="{{search-date}}"/>
+              <!-- <input id="date-field" placeholder="Enter Date of birth" type="date" name="search-date" value="{{search-date}}"> -->
+              <span></span>
+          </div>
+          <button id="search-submit" type="submit">Search</button>
+      </form>
+    </div>
+
+  </div>
+<!--
+  <div class="pharmacist-footer">
+
+  <footer>
+    <div class="copyright">
+      &copy; RxControl
+    </div>
+  </footer>
+
+  </div> -->
+
+</div>
